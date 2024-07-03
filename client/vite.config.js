@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-
+  build: {
+    outDir: 'dist',  // This ensures the output directory is 'dist'
+  },
   server: {
     proxy: {
       '/api': {
@@ -12,6 +13,5 @@ export default defineConfig({
       },
     },
   },
-
   plugins: [react()],
-})
+});
